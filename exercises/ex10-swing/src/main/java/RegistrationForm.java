@@ -1,4 +1,4 @@
-import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,14 +32,29 @@ public class RegistrationForm {
    * @return the form's root panel
    */
   public static JPanel buildForm() {
-    JPanel panel = new JPanel(new FlowLayout());
-    panel.add(new JLabel("First name:"));
-    panel.add(new JTextField(12));
-    panel.add(new JLabel("Last name:"));
-    panel.add(new JTextField(12));
-    panel.add(new JButton("Submit"));
-    panel.add(new JButton("Cancel"));
-    return panel;
+//    JPanel panel = new JPanel(new FlowLayout());
+//    panel.add(new JLabel("First name:"));
+//    panel.add(new JTextField(12));
+//    panel.add(new JLabel("Last name:"));
+//    panel.add(new JTextField(12));
+//    panel.add(new JButton("Submit"));
+//    panel.add(new JButton("Cancel"));
+//    return panel;
+    JPanel main = new JPanel();
+    JPanel firstNamePanel = new JPanel();
+    firstNamePanel.add(new JLabel("First name:"));
+    firstNamePanel.add(new JTextField(12));
+    JPanel lastNamePanel = new JPanel();
+    lastNamePanel.add(new JLabel("Last name:"));
+    lastNamePanel.add(new JTextField(12));
+    JPanel buttons = new JPanel();
+    buttons.add(new JButton("Submit"));
+    buttons.add(new JButton("Cancel"));
+    main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
+    main.add(firstNamePanel);
+    main.add(lastNamePanel);
+    main.add(buttons);
+    return main;
   }
 
   /** Shows the form in a window so you can compare it with the target picture. */
