@@ -74,7 +74,8 @@ public class MyHashing {
     char[] chars = value.toCharArray();
     int sum = 0;
     for (char c : chars){
-      sum += c;}
+      sum += c;
+    }
     return sum;
   }
 }
